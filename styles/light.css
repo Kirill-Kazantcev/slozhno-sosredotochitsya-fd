@@ -69,7 +69,7 @@
   color: var(--accent-color, rgba(53, 52, 48, 1));
 }
 .theme-light .header__theme-menu-button:hover {
-  border-color: var(--accent-hover-color, rgba(50, 49, 45, 0.4));
+  border-color: 1px solid var(--accent-hover-color, rgba(50, 49, 45, 0.4));
 }
 
 /* В макете фимы для 1024 фон у футера отличается */

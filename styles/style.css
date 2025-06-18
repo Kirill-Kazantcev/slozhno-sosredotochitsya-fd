@@ -10,9 +10,10 @@
   font-weight: var(--page-font-weight, 400);
   font-size: var(--page-font-size, 1.125rem);
   line-height: var(--page-line-height, 1.3em);
-  color: var(--page-text-color, rgba(241, 178, 206, 1));
+  color: var(--page-text-color);
   /* Фон и позиционирование картинки */
-  background-color: var(--page-backgrond-color, rgba(0, 0, 40, 1));
+  background-color: var(--page-background-color, rgba(0, 0, 40, 1));
+  background-image: var(--page-background-image, url("../images/cover-image.png"));
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -39,7 +40,7 @@
 .description-decor,
 .title-decor {
   color: var(--page-title-color, rgba(0, 0, 40, 1));
-  background-color: var(--accent-color, rgba(255, 0, 112, 1));
+  background-color: var(--accent-background-color, rgba(255, 0, 112, 1));
 }
 
 /* decorated-zone */
@@ -118,11 +119,11 @@
 
 /* text decor */
 .header__shadow-decor {
-  text-shadow: 4px 4px 0 var(--accent-color, rgba(255, 0, 112, 1));
+  text-shadow: 4px 4px 0 var(--accent-background-color, rgba(255, 0, 112, 1));
 }
 .article-link__shadow-decor,
 .footer__shadow-decor {
-  text-shadow: 2px 2px 0 var(--accent-color, rgba(255, 0, 112, 1));
+  text-shadow: 2px 2px 0 var(--accent-background-color, rgba(255, 0, 112, 1));
 }
 
 /* header */
