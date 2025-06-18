@@ -34,7 +34,7 @@
 }
 .theme-dark .header__title,
 .footer__title {
-  color: var(---title-color, rgba(219, 0, 255, 1));
+  color: var(--title-color, rgba(219, 0, 255, 1));
 }
 .theme-dark title {
   color: var(--accent-color, rgba(255, 0, 112, 1));
@@ -59,17 +59,16 @@
 .theme-dark .header__shadow-decor {
   text-shadow: 4px 4px 0 var(--accent-color, rgba(255, 0, 112, 1));
 }
-.theme-dark .article-link__shadow-decor, .footer__shadow-decor {
+.theme-dark .article-link__shadow-decor,
+.footer__shadow-decor {
   text-shadow: 2px 2px 0 var(--accent-color, rgba(255, 0, 112, 1));
 }
 .theme-dark .header__theme-menu-button {
   color: var(--accent-color, rgba(255, 0, 112, 1));
 }
 .theme-dark .header__theme-menu-button:hover {
-  border-color: 1px solid var(--accent-hover-color, rgba(255, 0, 112, 0.4));
+  border-color: var(--accent-hover-color, rgba(255, 0, 112, 0.4));
 }
-
-
 /* Задаем видимость декору */
 .theme-dark .lamp-decor::before,
 .lamp-decor::after {

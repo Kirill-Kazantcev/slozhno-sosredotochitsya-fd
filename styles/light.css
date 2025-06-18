@@ -61,14 +61,15 @@
 .theme-light .header__shadow-decor {
   text-shadow: 4px 4px 0 var(--accent-background-color, rgba(255, 141, 203, 1));
 }
-.theme-light .article-link__shadow-decor, .footer__shadow-decor {
+.theme-light .article-link__shadow-decor,
+.footer__shadow-decor {
   text-shadow: 2px 2px 0 var(--accent-background-color, rgba(255, 141, 203, 1));
 }
 .theme-light .header__theme-menu-button {
   color: var(--accent-color, rgba(53, 52, 48, 1));
 }
 .theme-light .header__theme-menu-button:hover {
-  border-color: 1px solid var(--accent-hover-color, rgba(50, 49, 45, 0.4));
+  border-color: var(--accent-hover-color, rgba(50, 49, 45, 0.4));
 }
 
 /* В макете фимы для 1024 фон у футера отличается */

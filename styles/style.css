@@ -6,10 +6,10 @@
   flex-wrap: wrap;
   gap: var(--page-gap, 40px);
   /* Зададим страничный шрифт */
-  font-family: var(--page-font-family, "IBM Plex mono", monospace);
+  font-family: var(--page-font-family, "IBM Plex mono"), monospace;
   font-weight: var(--page-font-weight, 400);
-  font-size: var(--page-font-size, 1.125rem, 18px);
-  line-height: var(--page-line-height, 1.3em, 23.4px);
+  font-size: var(--page-font-size, 1.125rem);
+  line-height: var(--page-line-height, 1.3em);
   color: var(--page-text-color, rgba(241, 178, 206, 1));
   /* Фон и позиционирование картинки */
   background-color: var(--page-backgrond-color, rgba(0, 0, 40, 1));
@@ -23,7 +23,7 @@
 /* title style */
 .header__title,
 .footer__title {
-  color: var(---title-color, rgba(219, 0, 255, 1));
+  color: var(--title-color, rgba(219, 0, 255, 1));
   font-weight: var(--title-font-weight, 700);
   font-size: var(--title-font-size-mobile, 116px);
   line-height: var(--title-line-height, 83%);
@@ -121,7 +121,8 @@
 .header__shadow-decor {
   text-shadow: 4px 4px 0 var(--accent-color, rgba(255, 0, 112, 1));
 }
-.article-link__shadow-decor, .footer__shadow-decor {
+.article-link__shadow-decor,
+.footer__shadow-decor {
   text-shadow: 2px 2px 0 var(--accent-color, rgba(255, 0, 112, 1));
 }
 
@@ -271,7 +272,7 @@
 /* media size-desctop */
 @media (width >= 768px) {
   .page {
-    gap: var(--page-gap, clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem), 60px);
+    gap: var(--page-gap, clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem));
   }
   .decorated-zone {
     padding: var(--section-padding, 20px);
@@ -288,8 +289,7 @@
   .footer__title {
     font-size: var(
       --title-font-size-desctop,
-      clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem),
-      116px
+      clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem)
     );
   }
   .header__title-description {
@@ -315,7 +315,6 @@
   .gallery-list__item:nth-child(3) {
     grid-row-start: span 2;
   }
-  
 }
 @media (width >= 1024px) {
   .header,
