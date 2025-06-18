@@ -13,7 +13,6 @@
   color: var(--page-text-color, rgba(241, 178, 206, 1));
   /* Фон и позиционирование картинки */
   background-color: var(--page-backgrond-color, rgba(0, 0, 40, 1));
-  background-image: var(--page-backgrond-image, url(../images/cover-image.png));
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
