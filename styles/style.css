@@ -2,4 +2,345 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--page-gap, 40px);
+  /* Зададим страничный шрифт */
+  font-family: var(--page-font-family, "IBM Plex mono", monospace);
+  font-weight: var(--page-font-weight, 400);
+  font-size: var(--page-font-size, 1.125rem, 18px);
+  line-height: var(--page-line-height, 1.3em, 23.4px);
+  color: var(--page-text-color, rgba(241, 178, 206, 1));
+  /* Фон и позиционирование картинки */
+  background-color: var(--page-backgrond-color, rgba(0, 0, 40, 1));
+  background-image: var(--page-backgrond-image, url(../images/cover-image.png));
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* title style */
+.header__title,
+.footer__title {
+  color: var(---title-color, rgba(219, 0, 255, 1));
+  font-weight: var(--title-font-weight, 700);
+  font-size: var(--title-font-size-mobile, 116px);
+  line-height: var(--title-line-height, 83%);
+}
+.title {
+  color: var(--accent-color, rgba(255, 0, 112, 1));
+  font-weight: var(--title-font-weight, 700);
+  font-size: inherit;
+  line-height: inherit;
+}
+.subtitle {
+  font-weight: inherit;
+}
+.description-decor,
+.title-decor {
+  color: var(--page-title-color, rgba(0, 0, 40, 1));
+  background-color: var(--accent-color, rgba(255, 0, 112, 1));
+}
+
+/* decorated-zone */
+.decorated-zone {
+  min-block-size: 668px;
+  padding: var(--page-padding, 10px);
+  padding-left: var(--page-padding-left, 0);
+}
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+}
+.decorated-zone::before {
+  inset-block-start: var(--page-padding, 10px);
+  inset-inline-end: var(--page-padding, 10px);
+  border-block-start: 1px solid var(--accent-color, rgba(255, 0, 112, 1));
+  border-inline-end: 1px solid var(--accent-color, rgba(255, 0, 112, 1));
+}
+.decorated-zone::after {
+  inset-block-end: var(--page-padding, 10px);
+  inset-inline-start: var(--page-padding, 10px);
+  border-block-end: 1px solid var(--accent-color, rgba(255, 0, 112, 1));
+  border-inline-start: 1px solid var(--accent-color, rgba(255, 0, 112, 1));
+}
+
+/* lamp-decor */
+.lamp-decor {
+  position: absolute;
+  inset-block-start: var(--page-padding, 10px);
+  inset-inline-end: calc(var(--page-padding, 10px) + 9px);
+  inline-size: 52px;
+  block-size: 26px;
+  z-index: -1;
+}
+.lamp-decor::before,
+.lamp-decor::after {
+  position: absolute;
+  visibility: var(--lamp-decor-visibility, visible);
+}
+.lamp-decor::before {
+  content: "rec";
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  color: var(--accent-color, rgba(255, 0, 112, 1));
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 25px;
+}
+.lamp-decor::after {
+  content: "";
+  inset-block-start: 8px;
+  inset-inline-end: 0;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color, rgba(255, 0, 112, 1));
+  box-shadow: 0 0 4px 2px var(--accent-color, rgba(255, 0, 112, 1));
+}
+
+/* link decor*/
+.article-link {
+  text-decoration: none;
+}
+.article-link:hover {
+  border-bottom: 1px solid currentColor;
+}
+.article-link:focus {
+  outline: none;
+}
+.article-link:focus-visible {
+  border: 1px solid currentColor;
+}
+
+/* text decor */
+.header__shadow-decor {
+  text-shadow: 4px 4px 0 var(--accent-color, rgba(255, 0, 112, 1));
+}
+.article-link__shadow-decor, .footer__shadow-decor {
+  text-shadow: 2px 2px 0 var(--accent-color, rgba(255, 0, 112, 1));
+}
+
+/* header */
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  grid-template-areas:
+    "theme-menu"
+    "title"
+    "title-description";
+  align-items: flex-start;
+  block-size: 100vh;
+  min-block-size: 668px;
+  inline-size: 100vw;
+}
+/* Меню кнопок */
+.header__theme-menu {
+  grid-area: theme-menu;
+  align-self: center;
+  justify-self: flex-end;
+}
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+}
+.header__theme-menu-button {
+  color: var(--accent-color, rgba(255, 0, 112, 1));
+  text-align: center;
+  line-height: 1em;
+  text-transform: lowercase;
+  background-color: transparent;
+  border: 1px solid transparent;
+  min-inline-size: 70px;
+  padding: 2px 12px 4px 12px;
+}
+
+/* Для нажатой кнопки устанавливается класс */
+.header__theme-menu-button_active {
+  border: 1px solid currentColor;
+  pointer-events: none;
+}
+.header__theme-menu-button:hover {
+  border: 1px solid var(--accent-hover-color, rgba(255, 0, 112, 0.4));
+  cursor: pointer;
+}
+.header__theme-menu-button:focus {
+  outline: none;
+}
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid currentColor;
+  cursor: pointer;
+}
+
+/* no-focus title */
+.header__title {
+  grid-area: title;
+}
+.header__title-description {
+  grid-area: title-description;
+  justify-self: end;
+  align-self: center;
+  block-size: fit-content;
+  inline-size: var(--title-description-mobile, 355px);
+  font-weight: var(--title-font-weight, 700);
+}
+
+/* main */
+.main {
+  display: grid;
+  grid-template-rows: repeat(4, min-content);
+  grid-template-areas:
+    "section-why"
+    "section-what"
+    "section-how"
+    "section-gallery";
+  gap: var(--main-gap, 50px);
+  padding: 0 var(--page-padding, 10px);
+}
+/* ,Блоки */
+.section {
+  display: grid;
+  gap: var(--section-gap, 20px);
+}
+.section-why {
+  grid-area: section-why;
+  display: grid;
+}
+.section-what {
+  grid-area: section-what;
+  display: grid;
+}
+.section-how {
+  grid-area: section-how;
+  display: grid;
+}
+.section-gallery {
+  grid-area: section-gallery;
+  display: grid;
+  gap: var(--list-item-gap, 10px);
+}
+/* Элементы */
+.section-what__title {
+  inline-size: var(--title-section-size-mobile, 355px);
+}
+.section-how-advice {
+  display: grid;
+  gap: var(--section-gap, 20px);
+}
+.article-list {
+  display: grid;
+  gap: var(--article-list-gap, 20px);
+}
+.gallery-list {
+  display: grid;
+  row-gap: 3px;
+  column-gap: 20px;
+}
+.article {
+  display: grid;
+  gap: var(--article-gap, 10px);
+}
+.gallery-list__item {
+  display: block;
+}
+.gallery-list__item-img {
+  block-size: 100%;
+  inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* footer */
+.footer {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  block-size: 100vh;
+  inline-size: 100vw;
+}
+
+/* media size-desctop */
+@media (width >= 768px) {
+  .page {
+    gap: var(--page-gap, clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem), 60px);
+  }
+  .decorated-zone {
+    padding: var(--section-padding, 20px);
+    padding-left: var(--section-padding-left, 0);
+  }
+  .header,
+  .footer {
+    min-block-size: 1024px;
+  }
+  .footer {
+    padding-left: 20px;
+  }
+  .header__title,
+  .footer__title {
+    font-size: var(
+      --title-font-size-desctop,
+      clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem),
+      116px
+    );
+  }
+  .header__title-description {
+    inline-size: var(--title-description-desctop, 364px);
+  }
+  .section-why,
+  .section-how,
+  .section-what__title {
+    grid-template-columns: 1fr 2fr;
+  }
+  .section-what__title {
+    inline-size: var(--title-section-size-desctop, 236px);
+  }
+  .gallery-list {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 11px;
+  }
+  .gallery-list__item:first-child,
+  .gallery-list__item:last-child {
+    grid-column-start: span 2;
+  }
+  .gallery-list__item:nth-child(2),
+  .gallery-list__item:nth-child(3) {
+    grid-row-start: span 2;
+  }
+  
+}
+@media (width >= 1024px) {
+  .header,
+  .footer {
+    min-block-size: 768px;
+  }
+  .header__theme-menu {
+    align-self: start;
+    justify-self: center;
+    padding-left: 20px;
+  }
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+  .section-why,
+  .section-how {
+    gap: 10px;
+  }
+  .section-what__article-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer {
+    padding-left: 20px;
+  }
+  .gallery-list {
+    row-gap: 11.5px;
+  }
 }

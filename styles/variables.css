@@ -2,3 +2,80 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  /* Основной шрифт, цвета и картинка для фона страницы */
+  --page-font-family: "IBM Plex mono", monospace;
+  --page-text-font-weight: 400;
+  --page-font-size: 18px;
+  --page-line-height: 23.4px;
+  --page-title-color: rgba(0, 0, 40, 1);
+  --page-text-color: rgba(241, 178, 206, 1);
+  --page-background-color: var(--page-title-color, rgba(0, 0, 40, 1));
+  --page-background-image: url("../images/cover-image.png");
+
+  /* Шрифт и цвета для focus */
+  --title-color: rgba(219, 0, 255, 1);
+  --title-font-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --title-font-size-desctop: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  --title-font-weight: 700;
+  --title-line-height: 83%;
+
+  /* Цвета декора и титулов секций */
+  --accent-color: rgba(255, 0, 112, 1);
+  --accent-hover-color: rgba(255, 0, 112, 0.4);
+  --accent-background-color: var(--accent-color, rgba(255, 0, 112, 1));
+
+  /* Интервалы */
+  --page-gap: clamp(
+    2.5rem,
+    1.3073rem + 5.0891vw,
+    3.75rem
+  ); /* 40px -> 60px это gap между header main и footer */
+  --main-gap: clamp(
+    3.125rem,
+    1.3359rem + 7.6336vw,
+    5rem
+  ); /* 50px -> 80px это gap между секциями */
+  --section-gap: 20px; /* это gap между элементами внутри секций*/
+  --article-list-gap: 20px; /* 10px -> 20px;  это gap между элементами внутри артиклей*/
+  --article-gap: 10px; /* это gap между элементами внутри артиклей*/
+  --list-item-gap: clamp(
+    0.625rem,
+    0.0286rem + 2.5445vw,
+    1.25rem
+  ); /* 10px -> 20px;  это gap между картикнками*/
+  /* Отступы */
+  --page-padding: clamp(
+    0.625rem,
+    0.0286rem + 2.5445vw,
+    1.25rem
+  ); /* 10px -> 20px */
+  --page-padding-left: clamp(
+    0rem,
+    1.2214rem - 2.5445vw,
+    0.625rem
+  ); /* 10px -> 0 */
+  /* Размеры для динамичных титутлов */
+  --title-description-mobile: clamp(
+    22.1875rem,
+    21.6508rem + 2.2901vw,
+    22.75rem
+  ); /* 355px -> 364px */
+  --title-description-desctop: clamp(
+    22.75rem,
+    -1.0625rem + 49.6094vw,
+    30.6875rem
+  ); /* 364px -> 491px */
+  --title-section-size-mobile: clamp(
+    22.1875rem,
+    7.6531rem - 30.2799vw,
+    14.75rem
+  ); /* 355px -> 236px */
+  --title-section-size-desctop: clamp(
+    14.75rem,
+    -0.0625rem + 30.8594vw,
+    19.6875rem
+  ); /* 236px -> 315px */
+  /* видимость lamp */
+  --lamp-decor-visibility: visible;
+}
