@@ -14,7 +14,7 @@
   --page-text-color: rgba(241, 178, 206, 1);
   --page-background-color: rgba(0, 0, 40, 1);
   --page-background-image: url("../images/cover-image-dark.png");
-  
+
   /* Шрифт и цвета для focus */
   --title-color: rgba(219, 0, 255, 1);
 
@@ -22,7 +22,7 @@
   --accent-color: rgba(255, 0, 112, 1);
   --accent-hover-color: rgba(255, 0, 112, 0.4);
   --accent-background-color: var(--accent-color, rgba(255, 0, 112, 1));
-  
+
   /* видимость lamp */
   --lamp-decor-visibility: visible;
 }

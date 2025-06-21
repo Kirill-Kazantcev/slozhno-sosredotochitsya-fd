@@ -25,7 +25,7 @@
 
   /* Цвет для тени focus 1024 */
   --shadow-accent-color: rgba(255, 0, 112, 1);
-  
+
   /* видимость lamp */
   --lamp-decor-visibility: hidden;
 }
@@ -44,28 +44,26 @@
   visibility: var(--lamp-decor-visibility, hidden);
 }
 
-
-
 @media (prefers-color-scheme: light) {
   :root {
-  /* Цвета страницы*/
-  --page-title-color: rgba(53, 52, 48, 1);
-  --page-text-color: rgba(53, 52, 48, 1);
-  --page-background-color: rgba(255, 241, 247, 1);
-  --page-background-image: url("../images/cover-image-light.png");
+    /* Цвета страницы*/
+    --page-title-color: rgba(53, 52, 48, 1);
+    --page-text-color: rgba(53, 52, 48, 1);
+    --page-background-color: rgba(255, 241, 247, 1);
+    --page-background-image: url("../images/cover-image-light.png");
 
-  /* Шрифт и цвета для focus */
-  --title-color: rgba(255, 194, 230, 1);
+    /* Шрифт и цвета для focus */
+    --title-color: rgba(255, 194, 230, 1);
 
-  /* Цвета декора и титулов секций  */
-  --accent-color: rgba(53, 52, 48, 1);
-  --accent-hover-color: rgba(50, 49, 45, 0.4);
-  --accent-background-color: rgba(255, 141, 203, 1);
+    /* Цвета декора и титулов секций  */
+    --accent-color: rgba(53, 52, 48, 1);
+    --accent-hover-color: rgba(50, 49, 45, 0.4);
+    --accent-background-color: rgba(255, 141, 203, 1);
 
-  /* Цвет для тени focus 1024 */
-  --shadow-accent-color: rgba(255, 0, 112, 1);
+    /* Цвет для тени focus 1024 */
+    --shadow-accent-color: rgba(255, 0, 112, 1);
 
-  /* видимость lamp */
-  --lamp-decor-visibility: hidden;
+    /* видимость lamp */
+    --lamp-decor-visibility: hidden;
   }
 }
