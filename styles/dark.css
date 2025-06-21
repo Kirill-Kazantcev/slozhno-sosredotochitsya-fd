@@ -14,61 +14,27 @@
   --page-text-color: rgba(241, 178, 206, 1);
   --page-background-color: rgba(0, 0, 40, 1);
   --page-background-image: url("../images/cover-image-dark.png");
+  
   /* Шрифт и цвета для focus */
   --title-color: rgba(219, 0, 255, 1);
+
   /* Цвета декора и титулов секций */
   --accent-color: rgba(255, 0, 112, 1);
   --accent-hover-color: rgba(255, 0, 112, 0.4);
   --accent-background-color: var(--accent-color, rgba(255, 0, 112, 1));
+  
   /* видимость lamp */
   --lamp-decor-visibility: visible;
 }
 
 .theme-dark .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
-  background-color: var(--page-background-color, rgba(0, 0, 40, 1));
   background-image: var(
     --page-background-image,
     url("../images/cover-image-dark.png")
   );
 }
-.theme-dark .header__title,
-.footer__title {
-  color: var(--title-color, rgba(219, 0, 255, 1));
-}
-.theme-dark title {
-  color: var(--accent-color, rgba(255, 0, 112, 1));
-}
 
-.theme-dark .description-decor,
-.title-decor {
-  color: var(--page-title-color, rgba(0, 0, 40, 1));
-  background-color: var(--accent-color, rgba(255, 0, 112, 1));
-}
-.theme-dark .decorated-zone::before,
-.decorated-zone::after {
-  border-color: var(--accent-color, rgba(255, 0, 112, 1));
-}
-.theme-dark .lamp-decor::before {
-  color: var(--accent-color, rgba(255, 0, 112, 1));
-}
-.theme-dark .lamp-decor::after {
-  background-color: var(--accent-color, rgba(255, 0, 112, 1));
-  box-shadow: 0 0 4px 2px var(--accent-color, rgba(255, 0, 112, 1));
-}
-.theme-dark .header__shadow-decor {
-  text-shadow: 4px 4px 0 var(--accent-color, rgba(255, 0, 112, 1));
-}
-.theme-dark .article-link__shadow-decor,
-.footer__shadow-decor {
-  text-shadow: 2px 2px 0 var(--accent-color, rgba(255, 0, 112, 1));
-}
-.theme-dark .header__theme-menu-button {
-  color: var(--accent-color, rgba(255, 0, 112, 1));
-}
-.theme-dark .header__theme-menu-button:hover {
-  border-color: var(--accent-hover-color, rgba(255, 0, 112, 0.4));
-}
 /* Задаем видимость декору */
 .theme-dark .lamp-decor::before,
 .lamp-decor::after {
